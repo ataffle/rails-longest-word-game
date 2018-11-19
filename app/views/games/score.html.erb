@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<% if @check_grid %>
+  <% if @check_english %>
+    <p>Congratulations!  <%= @word.join %> is an English word!</p>
+  <% else %>
+    <p>Sorry but <%= @word.join %> doesn't seem to be an English word</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <%= @word.join %> can't be built out of <%= @letters.split.join(",") %></p>
+<% end %>
+<%= link_to "Play again", new_path %>
